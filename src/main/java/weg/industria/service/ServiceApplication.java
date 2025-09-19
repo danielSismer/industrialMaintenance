@@ -28,13 +28,15 @@ public class ServiceApplication {
                 boolean isUnique = Security.verifyUniqueTechnical(tecnico, tecnicos);
                 MainSecurity.sendDataTecnico(isUnique, tecnico);
             }
-            case 3->{
+            case 3 ->{
                 var peca = UserIF.credenciaisPeca();
                 List<Peca> pecas = PecaDAO.listPeca();
                 boolean isUnique = Security.verifyUniquePart(peca, pecas);
                 boolean isMoreThanZero = Security.verifyAmount(pecas);
                 boolean isNull = Security.verifyNullPart(pecas);
                 MainSecurity.sendDataPeca(isUnique, isMoreThanZero,isNull, peca);
+            }
+            case 4 ->{
             }
         }
     }
